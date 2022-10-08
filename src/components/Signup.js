@@ -33,7 +33,7 @@ const Signup = (props) => {
     console.log(state);
     // axios.post('https://spotteddb.herokuapp.com/auth/signup', {
     axios
-      .post("http://localhost:3009/signup", {
+      .post(" https://mealplanner4.herokuapp.com/signup", {
         username: state.username,
         password: state.password,
       })
