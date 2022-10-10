@@ -14,7 +14,7 @@ const [saturday, setSaturday] = useState('');
 
 const [menuList, setMenuList] = useState([]);
 const addMenu = () =>{
-  axios.post('https://mealplanner4.herokuapp.com/',{
+  axios.post('https://mlplanner.herokuapp.com/create',{
   // axios.post('http://localhost:3009/create',{
     //body object to be sent to back end
     sunday: sunday,
@@ -38,13 +38,13 @@ const addMenu = () =>{
 });
 };
 const getMenu = () => {
-  axios.get('https://mealplanner4.herokuapp.com/menu', {
+  axios.get('https://mlplanner.herokuapp.com/menu', {
   }).then((response)=> {
     setMenuList(response.data);
   });
 };
 const deleteMenu = (iddinner) =>{
-  axios.delete(` https://mealplanner4.herokuapp.com/delete/${iddinner}`).then((response)=>{
+  axios.delete(`https://mlplanner.herokuapp.com/delete/${iddinner}`).then((response)=>{
     setMenuList(menuList.filter((val)=>{
       return val.iddinner !== iddinner;
     }))
